@@ -45,6 +45,10 @@ class ProfileViewController: UIViewController{
         addTapGesture()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
+    }
+    
     func setView(){
         #if DEBUG
         view.backgroundColor = .green
