@@ -9,6 +9,8 @@ import UIKit
 
 class LogInViewController: UIViewController {
     
+    var loginDelegate: LoginViewControllerDelegate?
+    
     private var activTextfield: UITextField?
     
     let scrollView: UIScrollView = {
@@ -91,6 +93,7 @@ class LogInViewController: UIViewController {
         addDelegate()
         addTapGesture()
         scrollView.contentSize.width = view.bounds.width
+        loginDelegate = LoginInspector()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -145,13 +148,13 @@ class LogInViewController: UIViewController {
         }
         
         loginTextField.snp.makeConstraints { make in
-            make.centerY.equalTo(loginPasswordTextFieldsStuckView.snp.centerY).offset(25)
+            make.centerY.equalTo(loginPasswordTextFieldsStuckView.snp.centerY).offset(-25)
             make.leading.equalTo(loginPasswordTextFieldsStuckView.snp.leading).inset(10)
             make.trailing.equalTo(loginPasswordTextFieldsStuckView.snp.trailing).inset(10)
         }
         
         passwordTextField.snp.makeConstraints { make in
-            make.centerY.equalTo(loginPasswordTextFieldsStuckView.snp.centerY).offset(-25)
+            make.centerY.equalTo(loginPasswordTextFieldsStuckView.snp.centerY).offset(25)
             make.leading.equalTo(loginPasswordTextFieldsStuckView.snp.leading).inset(10)
             make.trailing.equalTo(loginPasswordTextFieldsStuckView.snp.trailing).inset(10)
         }
@@ -174,21 +177,19 @@ class LogInViewController: UIViewController {
         view.addGestureRecognizer(tapGesture)
     }
     
-    let wrongLoginAlert: UIAlertController = {
-        let alert = UIAlertController(title: "Не правильный логин", message: "Вы ввели не правильный логин", preferredStyle: .alert)
+    let wrongLoginPasswordAlert: UIAlertController = {
+        let alert = UIAlertController(title: "Неправильный логин или пароль", message: "Вы ввели не правильный логин или пароль", preferredStyle: .alert)
         let action = UIAlertAction(title: "Закрыть", style: .cancel)
         alert.addAction(action)
         return alert
     }()
     
     @objc private func pushProfileVC() {
-        #if DEBUG
-        let service = TestUserService()
-        #else
-        let service = CurrentUserService()
-        #endif
-        guard let user = service.checkLogin(login: activTextfield?.text ?? "") else {return
-            self.present(wrongLoginAlert, animated: true)
+        guard let login = loginTextField.text else {return}
+        guard let password =  passwordTextField.text else {return}
+        guard let user = loginDelegate?.chek(login: login, password: password)
+        else {
+            return self.present(wrongLoginPasswordAlert, animated: true)
         }
         let profileViewController = ProfileViewController(user: user)
         navigationController?.pushViewController(profileViewController, animated: true)

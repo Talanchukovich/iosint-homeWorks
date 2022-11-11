@@ -13,6 +13,8 @@ class TestUserService: UserService {
     
     private let testUser2 = User(login: "test2", fullName: "Test User Dog", avatar: UIImage(named: "dog") ?? UIImage(systemName: "")!, status: "Testing Dog User")
     
+    
+    
     func checkLogin(login: String) -> User? {
         let users = [testUser1, testUser2]
         for user in users {
