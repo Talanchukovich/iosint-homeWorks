@@ -20,7 +20,7 @@ struct LoginInspector: LoginViewControllerDelegate {
     }
     
     func chek(login: String, password: String) -> User?{
-        return Checker.shared.chek(login: login, password: password) ? userSevice?.returnUser(login: login) : nil
+        return Checker.shared.chek(login: login, password: password) ? userSevice?.checkLogin(login: login) : nil
         
         
     }

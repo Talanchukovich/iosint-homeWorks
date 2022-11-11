@@ -8,5 +8,5 @@
 import UIKit
 
 protocol UserService {
-    func returnUser(login: String) -> User?
+    func checkLogin(login: String) -> User?
 }

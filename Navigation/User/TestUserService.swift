@@ -13,9 +13,16 @@ class TestUserService: UserService {
     
     private let testUser2 = User(login: "test2", fullName: "Test User Dog", avatar: UIImage(named: "dog") ?? UIImage(systemName: "")!, status: "Testing Dog User")
     
-    func returnUser(login: String) -> User? {
+    
+    
+    func checkLogin(login: String) -> User? {
         let users = [testUser1, testUser2]
-        return users.first(where: {$0.login == login})
+        for user in users {
+            if user.login == login {
+                return user
+            }
+        }
+        return nil
     }
     
     

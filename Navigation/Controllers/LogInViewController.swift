@@ -25,13 +25,13 @@ class LogInViewController: UIViewController {
         view.backgroundColor = .white
         return view
     }()
-
+    
     private lazy var logoImageView: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "logo")
         return image
     }()
-
+    
     private lazy var loginPasswordTextFieldsStuckView: UIStackView = {
         let stuck = UIStackView()
         stuck.axis = .vertical
@@ -42,7 +42,7 @@ class LogInViewController: UIViewController {
         stuck.backgroundColor = .systemGray6
         return stuck
     }()
-
+    
     private lazy var loginTextField: UITextField = {
         let textField = UITextField()
         textField.font = UIFont.systemFont(ofSize: 16)
@@ -52,7 +52,7 @@ class LogInViewController: UIViewController {
         textField.backgroundColor = .systemGray6
         return textField
     }()
-
+    
     private lazy var passwordTextField: UITextField = {
         let textField = UITextField()
         textField.font = UIFont.systemFont(ofSize: 16)
@@ -63,13 +63,13 @@ class LogInViewController: UIViewController {
         textField.isSecureTextEntry = true
         return textField
     }()
-
+    
     private lazy var mideLineTextFieldStuckView: UIView = {
         let view = UIView()
         view.backgroundColor = .black
         return view
     }()
-
+    
     private lazy var loginButton: UIButton = {
         let button = UIButton()
         button.setTitle("Log In", for: .normal)
@@ -84,7 +84,7 @@ class LogInViewController: UIViewController {
         button.addTarget(self, action: #selector(pushProfileVC), for: .touchUpInside)
         return button
     }()
-
+    
     private lazy var loginViews = [logoImageView, loginPasswordTextFieldsStuckView, loginTextField, passwordTextField, mideLineTextFieldStuckView, loginButton]
     
     override func viewDidLoad() {
@@ -93,6 +93,7 @@ class LogInViewController: UIViewController {
         addDelegate()
         addTapGesture()
         scrollView.contentSize.width = view.bounds.width
+        loginDelegate = LoginInspector()
     }
     
     override func viewWillAppear(_ animated: Bool) {
