@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import iOSIntPackage
 
 class PhotosViewController: UIViewController {
+    
+    let imagePublisherFacade = ImagePublisherFacade()
     
     private var collectionView: UIView
     
@@ -24,6 +27,7 @@ class PhotosViewController: UIViewController {
         super.viewDidLoad()
         self.setupView()
         setupNavigationBar()
+        imagePublisherFacade.subscribe(self)
     }
     
     private func setupNavigationBar() {
@@ -41,5 +45,11 @@ class PhotosViewController: UIViewController {
             make.trailing.equalTo(view.snp.trailing)
             make.bottom.equalTo(view.snp.bottom)
         }
+    }
+}
+
+extension PhotosViewController: ImageLibrarySubscriber {
+    func receive(images: [UIImage]) {
+        
     }
 }

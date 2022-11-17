@@ -6,15 +6,15 @@
 //
 
 import UIKit
+import StorageService
 
 class PhotoCollectionView: UICollectionView {
     
-    private var photos: [String]
+    private var photos = Photos().photosName
     private var layout: UICollectionViewFlowLayout
     private var collectionViewItemCount: CGFloat
     
     init(viewStruct: PhotosCollectionViewModel) {
-        self.photos = viewStruct.photos
         self.layout = viewStruct.layout
         self.collectionViewItemCount = viewStruct.collectionViewItemCount
         super.init(frame: .zero, collectionViewLayout: layout)
