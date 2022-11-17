@@ -16,6 +16,7 @@ struct PhotosCollectionViewModel {
     let sectionInset: UIEdgeInsets
     let scrollDirection: UICollectionView.ScrollDirection
     let layout = UICollectionViewFlowLayout()
+    
    
     init(collectionViewItemCount: CGFloat, minimumInteritemSpacing: CGFloat, minimumLineSpacing: CGFloat, sectionInset: UIEdgeInsets, scrollDirection: UICollectionView.ScrollDirection) {
         self.collectionViewItemCount = collectionViewItemCount

@@ -41,6 +41,7 @@ class LoginView: UIView {
         textField.placeholder = "Email or phone"
         textField.backgroundColor = .systemGray6
         textField.delegate = self
+        textField.text = "test1"
         return textField
     }()
     
@@ -53,6 +54,7 @@ class LoginView: UIView {
         textField.backgroundColor = .systemGray6
         textField.isSecureTextEntry = true
         textField.delegate = self
+        textField.text = "pass"
         return textField
     }()
     

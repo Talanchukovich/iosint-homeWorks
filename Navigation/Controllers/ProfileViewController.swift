@@ -89,13 +89,7 @@ class ProfileViewController: UIViewController{
     }
     
     @objc func pushPhotosVC(){
-        
-        let sectionInset = UIEdgeInsets(top: 8, left: 12, bottom: 8, right: 12)
-        let collectionStruct = PhotosCollectionViewModel(collectionViewItemCount: 3, minimumInteritemSpacing: 8,
-                                                         minimumLineSpacing: 8,sectionInset: sectionInset,
-                                                         scrollDirection: .vertical)
-        let collectionView = PhotoCollectionView(viewStruct: collectionStruct)
-        let photosViewController = PhotosViewController(collectionView: collectionView)
+        let photosViewController = PhotosViewController()
         navigationController?.pushViewController(photosViewController, animated: true)
     }
 }
@@ -121,6 +115,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         }
         photoCell.contentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pushPhotosVC)))
         
+       
         guard let postCell = postsTableView.dequeueReusableCell(withIdentifier: "PostTableViewCell", for: indexPath) as? PostTableViewCell else {
             let cell = postsTableView.dequeueReusableCell(withIdentifier: "PostTableViewCell", for: indexPath)
             return cell
@@ -188,5 +183,4 @@ extension ProfileViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return string.first == " " && textField.text?.isEmpty == true ? false : true
     }
-    
 }

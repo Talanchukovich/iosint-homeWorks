@@ -22,6 +22,7 @@
 		806D4382291EC806004B137A /* LoginFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806D4381291EC806004B137A /* LoginFactory.swift */; };
 		806D4384291EC840004B137A /* MyLoginFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806D4383291EC840004B137A /* MyLoginFactory.swift */; };
 		806D4386291ECFD0004B137A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806D4385291ECFD0004B137A /* LoginView.swift */; };
+		806D438929269E1D004B137A /* CollectionViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806D438829269E1D004B137A /* CollectionViewFactory.swift */; };
 		807E03F028FFD0CA0085110B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E03EF28FFD0CA0085110B /* AppDelegate.swift */; };
 		807E03F228FFD0CA0085110B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E03F128FFD0CA0085110B /* SceneDelegate.swift */; };
 		807E03F928FFD0D00085110B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 807E03F828FFD0D00085110B /* Assets.xcassets */; };
@@ -120,6 +121,7 @@
 		806D4381291EC806004B137A /* LoginFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFactory.swift; sourceTree = "<group>"; };
 		806D4383291EC840004B137A /* MyLoginFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLoginFactory.swift; sourceTree = "<group>"; };
 		806D4385291ECFD0004B137A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		806D438829269E1D004B137A /* CollectionViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewFactory.swift; sourceTree = "<group>"; };
 		807E03EC28FFD0CA0085110B /* Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		807E03EF28FFD0CA0085110B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		807E03F128FFD0CA0085110B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				80B6D30D2909A106009A476F /* PhotoCollectionView.swift */,
 				80B6D30329083885009A476F /* PhotosCollectionViewCell.swift */,
 				806D4385291ECFD0004B137A /* LoginView.swift */,
+				806D438829269E1D004B137A /* CollectionViewFactory.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 				8022A1A5290810B1006AEAEB /* PhotosViewController.swift in Sources */,
 				806D4386291ECFD0004B137A /* LoginView.swift in Sources */,
 				806D4380291E9D47004B137A /* LoginInspector.swift in Sources */,
+				806D438929269E1D004B137A /* CollectionViewFactory.swift in Sources */,
 				807E03F028FFD0CA0085110B /* AppDelegate.swift in Sources */,
 				806D4384291EC840004B137A /* MyLoginFactory.swift in Sources */,
 				80B6D30229057241009A476F /* PostTableViewCell.swift in Sources */,

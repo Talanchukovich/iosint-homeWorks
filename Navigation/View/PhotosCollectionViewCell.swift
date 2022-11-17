@@ -10,7 +10,7 @@ import UIKit
 class PhotosCollectionViewCell: UICollectionViewCell {
     
     struct PhotoViewModel {
-        var name: String
+        var photo: UIImage
     }
     
     private lazy var photoImageView: UIImageView = {
@@ -45,6 +45,6 @@ class PhotosCollectionViewCell: UICollectionViewCell {
     }
     
     func setupViewModel(viewModel: PhotoViewModel) {
-        photoImageView.image = UIImage(named: viewModel.name)
+        photoImageView.image = viewModel.photo
     }
 }
