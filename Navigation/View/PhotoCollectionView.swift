@@ -15,6 +15,10 @@ class PhotoCollectionView: UICollectionView {
         case photosVC
     }
     
+    lazy var photos: [UIImage] = Photos().photosName
+    var layout = UICollectionViewFlowLayout()
+    var itemWidth: CGFloat = 0
+    
     init(viewControllerName: ViewControllerName) {
         super.init(frame: .zero, collectionViewLayout: layout)
         self.layout = setLayout(viewControllerName)
@@ -27,7 +31,6 @@ class PhotoCollectionView: UICollectionView {
     }
     
     func setLayout(_ viewControllerName: ViewControllerName) -> UICollectionViewFlowLayout {
-       
         switch viewControllerName {
         case .profileVC:
            layout.scrollDirection = .horizontal
@@ -44,9 +47,7 @@ class PhotoCollectionView: UICollectionView {
     }
     
     func setItemWidth(_ viewControllerName: ViewControllerName) -> CGFloat{
-        
         var collectionViewItemCount: CGFloat = 0
-        
         switch viewControllerName {
         case .profileVC:
             collectionViewItemCount = 4
@@ -58,13 +59,7 @@ class PhotoCollectionView: UICollectionView {
         return itemWidth
     }
     
-
-    lazy var photos: [UIImage] = Photos().photosName
-    var layout = UICollectionViewFlowLayout()
-    var itemWidth: CGFloat = 0
-    
     func setupView() {
-    
         self.register(PhotosCollectionViewCell.self, forCellWithReuseIdentifier: "PhotosCollectionViewCell")
         self.backgroundColor = .white
         self.delegate = self

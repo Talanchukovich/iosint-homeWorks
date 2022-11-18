@@ -12,7 +12,6 @@
 		526024C4F923942D0F85EEA9 /* Pods_StorageService_StorageServiceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15D1393A78D4C2B337C54C3C /* Pods_StorageService_StorageServiceTests.framework */; };
 		5A934B90502F4F9C6F98B08F /* Pods_StorageService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E3175F1E3936EFCD7F53E8 /* Pods_StorageService.framework */; };
 		8022A1A5290810B1006AEAEB /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8022A1A4290810B1006AEAEB /* PhotosViewController.swift */; };
-		80293F5C290A5D7F00C3565C /* PhotosCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80293F5B290A5D7F00C3565C /* PhotosCollectionViewModel.swift */; };
 		802C441029261E9B0045324D /* iOSIntPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 802C440F29261E9B0045324D /* iOSIntPackage */; };
 		802EBD8E28FFF5FD003CFE9E /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802EBD8D28FFF5FD003CFE9E /* InfoViewController.swift */; };
 		802EBD9029000D07003CFE9E /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802EBD8F29000D07003CFE9E /* ProfileHeaderView.swift */; };
@@ -22,7 +21,6 @@
 		806D4382291EC806004B137A /* LoginFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806D4381291EC806004B137A /* LoginFactory.swift */; };
 		806D4384291EC840004B137A /* MyLoginFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806D4383291EC840004B137A /* MyLoginFactory.swift */; };
 		806D4386291ECFD0004B137A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806D4385291ECFD0004B137A /* LoginView.swift */; };
-		806D438929269E1D004B137A /* CollectionViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806D438829269E1D004B137A /* CollectionViewFactory.swift */; };
 		807E03F028FFD0CA0085110B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E03EF28FFD0CA0085110B /* AppDelegate.swift */; };
 		807E03F228FFD0CA0085110B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E03F128FFD0CA0085110B /* SceneDelegate.swift */; };
 		807E03F928FFD0D00085110B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 807E03F828FFD0D00085110B /* Assets.xcassets */; };
@@ -111,7 +109,6 @@
 		36E07C73C33EAE0EB46B012F /* Pods-Navigation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Navigation.debug.xcconfig"; path = "Target Support Files/Pods-Navigation/Pods-Navigation.debug.xcconfig"; sourceTree = "<group>"; };
 		5CFDD59FB1A46701FD04E1CC /* Pods-StorageService-StorageServiceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StorageService-StorageServiceTests.debug.xcconfig"; path = "Target Support Files/Pods-StorageService-StorageServiceTests/Pods-StorageService-StorageServiceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8022A1A4290810B1006AEAEB /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
-		80293F5B290A5D7F00C3565C /* PhotosCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewModel.swift; sourceTree = "<group>"; };
 		802EBD8D28FFF5FD003CFE9E /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		802EBD8F29000D07003CFE9E /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		80498A46F85327377EDA5160 /* Pods_Navigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Navigation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,7 +118,6 @@
 		806D4381291EC806004B137A /* LoginFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFactory.swift; sourceTree = "<group>"; };
 		806D4383291EC840004B137A /* MyLoginFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLoginFactory.swift; sourceTree = "<group>"; };
 		806D4385291ECFD0004B137A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		806D438829269E1D004B137A /* CollectionViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewFactory.swift; sourceTree = "<group>"; };
 		807E03EC28FFD0CA0085110B /* Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		807E03EF28FFD0CA0085110B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		807E03F128FFD0CA0085110B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -185,14 +181,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		80293F5D290A617300C3565C /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				80293F5B290A5D7F00C3565C /* PhotosCollectionViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		806D4387291EFDA1004B137A /* LoginPasswordChecker */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,7 +222,6 @@
 				80A4B310291D3F3600321E6A /* User */,
 				807E040328FFD59B0085110B /* Controllers */,
 				807E040928FFD7F40085110B /* View */,
-				80293F5D290A617300C3565C /* ViewModels */,
 				807E03EF28FFD0CA0085110B /* AppDelegate.swift */,
 				807E03F128FFD0CA0085110B /* SceneDelegate.swift */,
 				807E03F828FFD0D00085110B /* Assets.xcassets */,
@@ -268,7 +255,6 @@
 				80B6D30D2909A106009A476F /* PhotoCollectionView.swift */,
 				80B6D30329083885009A476F /* PhotosCollectionViewCell.swift */,
 				806D4385291ECFD0004B137A /* LoginView.swift */,
-				806D438829269E1D004B137A /* CollectionViewFactory.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -581,13 +567,11 @@
 				806D437C291E97F0004B137A /* Checker.swift in Sources */,
 				807E041028FFDF430085110B /* PostViewController.swift in Sources */,
 				80D0BFB8291C14AA00FAD475 /* (null) in Sources */,
-				80293F5C290A5D7F00C3565C /* PhotosCollectionViewModel.swift in Sources */,
 				802EBD8E28FFF5FD003CFE9E /* InfoViewController.swift in Sources */,
 				807E040B28FFD8100085110B /* ProfileViewController.swift in Sources */,
 				8022A1A5290810B1006AEAEB /* PhotosViewController.swift in Sources */,
 				806D4386291ECFD0004B137A /* LoginView.swift in Sources */,
 				806D4380291E9D47004B137A /* LoginInspector.swift in Sources */,
-				806D438929269E1D004B137A /* CollectionViewFactory.swift in Sources */,
 				807E03F028FFD0CA0085110B /* AppDelegate.swift in Sources */,
 				806D4384291EC840004B137A /* MyLoginFactory.swift in Sources */,
 				80B6D30229057241009A476F /* PostTableViewCell.swift in Sources */,
