@@ -6,24 +6,28 @@
 //
 
 import UIKit
+import iOSIntPackage
 
 class PhotosViewController: UIViewController {
     
-    private var collectionView: UIView
-    
-    init(collectionView: UIView) {
-        self.collectionView = collectionView
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    private lazy var imagePublisherFacade = ImagePublisherFacade()
+    private lazy var collectionView = PhotoCollectionView(viewControllerName: .photosVC)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
         setupNavigationBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        imagePublisherFacade.subscribe(self)
+        imagePublisherFacade.addImagesWithTimer(time: 0.5, repeat: 20)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        imagePublisherFacade.removeSubscription(for: self)
+        imagePublisherFacade.rechargeImageLibrary()
     }
     
     private func setupNavigationBar() {
@@ -41,5 +45,14 @@ class PhotosViewController: UIViewController {
             make.trailing.equalTo(view.snp.trailing)
             make.bottom.equalTo(view.snp.bottom)
         }
+    }
+}
+
+extension PhotosViewController: ImageLibrarySubscriber {
+    func receive(images: [UIImage]) {
+        collectionView.photos = images
+        collectionView.reloadData()
+        let item = IndexPath(item: images.count - 1, section: 0)
+        collectionView.scrollToItem(at: item, at: .bottom, animated: true)
     }
 }

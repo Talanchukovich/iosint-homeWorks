@@ -41,6 +41,7 @@ class LoginView: UIView {
         textField.placeholder = "Email or phone"
         textField.backgroundColor = .systemGray6
         textField.delegate = self
+        textField.text = "test1"
         return textField
     }()
     
@@ -53,6 +54,7 @@ class LoginView: UIView {
         textField.backgroundColor = .systemGray6
         textField.isSecureTextEntry = true
         textField.delegate = self
+        textField.text = "pass"
         return textField
     }()
     
@@ -94,7 +96,6 @@ class LoginView: UIView {
         loginViews.forEach({self.addSubview($0)})
         
         logoImageView.snp.makeConstraints { make in
-            make.top.equalTo(self.snp.top).inset(120)
             make.centerX.equalTo(self.snp.centerX)
             make.width.equalTo(100)
             make.height.equalTo(100)

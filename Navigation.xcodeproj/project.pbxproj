@@ -12,7 +12,7 @@
 		526024C4F923942D0F85EEA9 /* Pods_StorageService_StorageServiceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15D1393A78D4C2B337C54C3C /* Pods_StorageService_StorageServiceTests.framework */; };
 		5A934B90502F4F9C6F98B08F /* Pods_StorageService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E3175F1E3936EFCD7F53E8 /* Pods_StorageService.framework */; };
 		8022A1A5290810B1006AEAEB /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8022A1A4290810B1006AEAEB /* PhotosViewController.swift */; };
-		80293F5C290A5D7F00C3565C /* PhotosCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80293F5B290A5D7F00C3565C /* PhotosCollectionViewModel.swift */; };
+		802C441029261E9B0045324D /* iOSIntPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 802C440F29261E9B0045324D /* iOSIntPackage */; };
 		802EBD8E28FFF5FD003CFE9E /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802EBD8D28FFF5FD003CFE9E /* InfoViewController.swift */; };
 		802EBD9029000D07003CFE9E /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802EBD8F29000D07003CFE9E /* ProfileHeaderView.swift */; };
 		806D437C291E97F0004B137A /* Checker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806D437B291E97F0004B137A /* Checker.swift */; };
@@ -30,7 +30,6 @@
 		807E040D28FFD84A0085110B /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E040C28FFD84A0085110B /* FeedViewController.swift */; };
 		807E041028FFDF430085110B /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E040F28FFDF430085110B /* PostViewController.swift */; };
 		807E041228FFE34D0085110B /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E041128FFE34D0085110B /* FeedView.swift */; };
-		80A4B309291D3DDB00321E6A /* iOSIntPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 80D0BFB4291BEEDF00FAD475 /* iOSIntPackage */; };
 		80A4B315291D3F5900321E6A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A4B311291D3F5800321E6A /* User.swift */; };
 		80A4B316291D3F5900321E6A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A4B311291D3F5800321E6A /* User.swift */; };
 		80A4B317291D3F5900321E6A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A4B311291D3F5800321E6A /* User.swift */; };
@@ -110,7 +109,6 @@
 		36E07C73C33EAE0EB46B012F /* Pods-Navigation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Navigation.debug.xcconfig"; path = "Target Support Files/Pods-Navigation/Pods-Navigation.debug.xcconfig"; sourceTree = "<group>"; };
 		5CFDD59FB1A46701FD04E1CC /* Pods-StorageService-StorageServiceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StorageService-StorageServiceTests.debug.xcconfig"; path = "Target Support Files/Pods-StorageService-StorageServiceTests/Pods-StorageService-StorageServiceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8022A1A4290810B1006AEAEB /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
-		80293F5B290A5D7F00C3565C /* PhotosCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewModel.swift; sourceTree = "<group>"; };
 		802EBD8D28FFF5FD003CFE9E /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		802EBD8F29000D07003CFE9E /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		80498A46F85327377EDA5160 /* Pods_Navigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Navigation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,10 +154,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80A4B309291D3DDB00321E6A /* iOSIntPackage in Frameworks */,
 				80D0BF97291B0A2D00FAD475 /* StorageService.framework in Frameworks */,
 				24E52E71B49053AC0EB54F30 /* (null) in Frameworks */,
 				15DD5703B228290B1E787655 /* Pods_Navigation.framework in Frameworks */,
+				802C441029261E9B0045324D /* iOSIntPackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,14 +181,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		80293F5D290A617300C3565C /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				80293F5B290A5D7F00C3565C /* PhotosCollectionViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		806D4387291EFDA1004B137A /* LoginPasswordChecker */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,7 +222,6 @@
 				80A4B310291D3F3600321E6A /* User */,
 				807E040328FFD59B0085110B /* Controllers */,
 				807E040928FFD7F40085110B /* View */,
-				80293F5D290A617300C3565C /* ViewModels */,
 				807E03EF28FFD0CA0085110B /* AppDelegate.swift */,
 				807E03F128FFD0CA0085110B /* SceneDelegate.swift */,
 				807E03F828FFD0D00085110B /* Assets.xcassets */,
@@ -356,7 +345,7 @@
 			);
 			name = Navigation;
 			packageProductDependencies = (
-				80D0BFB4291BEEDF00FAD475 /* iOSIntPackage */,
+				802C440F29261E9B0045324D /* iOSIntPackage */,
 			);
 			productName = Navigation;
 			productReference = 807E03EC28FFD0CA0085110B /* Navigation.app */;
@@ -433,7 +422,7 @@
 			);
 			mainGroup = 807E03E328FFD0CA0085110B;
 			packageReferences = (
-				80D0BFB3291BEEDF00FAD475 /* XCRemoteSwiftPackageReference "iOSIntPackage" */,
+				802C440E29261E9B0045324D /* XCRemoteSwiftPackageReference "iOSIntPackage" */,
 			);
 			productRefGroup = 807E03ED28FFD0CA0085110B /* Products */;
 			projectDirPath = "";
@@ -546,9 +535,11 @@
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Navigation/Pods-Navigation-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Navigation/Pods-Navigation-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -576,7 +567,6 @@
 				806D437C291E97F0004B137A /* Checker.swift in Sources */,
 				807E041028FFDF430085110B /* PostViewController.swift in Sources */,
 				80D0BFB8291C14AA00FAD475 /* (null) in Sources */,
-				80293F5C290A5D7F00C3565C /* PhotosCollectionViewModel.swift in Sources */,
 				802EBD8E28FFF5FD003CFE9E /* InfoViewController.swift in Sources */,
 				807E040B28FFD8100085110B /* ProfileViewController.swift in Sources */,
 				8022A1A5290810B1006AEAEB /* PhotosViewController.swift in Sources */,
@@ -970,20 +960,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		80D0BFB3291BEEDF00FAD475 /* XCRemoteSwiftPackageReference "iOSIntPackage" */ = {
+		802C440E29261E9B0045324D /* XCRemoteSwiftPackageReference "iOSIntPackage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/TrueMax/iOSIntPackage";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
+				branch = imagepublisher;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		80D0BFB4291BEEDF00FAD475 /* iOSIntPackage */ = {
+		802C440F29261E9B0045324D /* iOSIntPackage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 80D0BFB3291BEEDF00FAD475 /* XCRemoteSwiftPackageReference "iOSIntPackage" */;
+			package = 802C440E29261E9B0045324D /* XCRemoteSwiftPackageReference "iOSIntPackage" */;
 			productName = iOSIntPackage;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -9,15 +9,9 @@ import UIKit
 
 class PhotosTableViewCell: UITableViewCell {
     
-    private lazy var sectionInset = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
-    private lazy var contentViewStruct = PhotosCollectionViewModel(collectionViewItemCount: 4, minimumInteritemSpacing: 8,
-                                                                    minimumLineSpacing: 8, sectionInset: sectionInset,
-                                                                    scrollDirection: .horizontal)
-    private lazy var collectionView = PhotoCollectionView(viewStruct: contentViewStruct)
+    private lazy var collectionView = PhotoCollectionView(viewControllerName: .profileVC)
     
-    lazy var collectionViewHieght: CGFloat = collectionView.setCollectionItemHieght(layout: contentViewStruct.layout) + sectionInset.top + sectionInset.top
-    
-    lazy var photosLabel: UILabel = {
+    private lazy var photosLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         label.textColor = .black
@@ -25,7 +19,7 @@ class PhotosTableViewCell: UITableViewCell {
         return label
     }()
     
-    lazy var cellAccessoryView: UIImageView = {
+    private lazy var cellAccessoryView: UIImageView = {
         let view = UIImageView()
         view.image = UIImage(named: "arrow.right")
         return view
@@ -40,7 +34,7 @@ class PhotosTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupView() {
+    private func setupView() {
         self.layer.borderWidth = 0.3
         self.layer.borderColor = UIColor.gray.cgColor
         self.contentView.addSubview(photosLabel)
@@ -62,7 +56,7 @@ class PhotosTableViewCell: UITableViewCell {
             make.leading.equalTo(self.contentView.snp.leading)
             make.trailing.equalTo(self.contentView.snp.trailing)
             make.bottom.equalTo(self.contentView.snp.bottom)
-            make.height.equalTo(collectionViewHieght)
+            make.height.equalTo(collectionView.itemWidth + collectionView.layout.sectionInset.top + collectionView.layout.sectionInset.bottom + collectionView.layout.minimumLineSpacing)
             make.width.equalTo(UIScreen.main.bounds.width)
         }
     }
