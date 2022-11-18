@@ -11,7 +11,7 @@ import iOSIntPackage
 class PhotosViewController: UIViewController {
     
     private lazy var imagePublisherFacade = ImagePublisherFacade()
-    private lazy var collectionView = CollectionViewFactory().createPhotosViewControllerCollectionView()
+    private lazy var collectionView = PhotoCollectionView(viewControllerName: .photosVC)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class PhotosViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         imagePublisherFacade.subscribe(self)
-        imagePublisherFacade.addImagesWithTimer(time: 0.5, repeat: 10)
+        imagePublisherFacade.addImagesWithTimer(time: 0.5, repeat: 20)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -52,5 +52,7 @@ extension PhotosViewController: ImageLibrarySubscriber {
     func receive(images: [UIImage]) {
         collectionView.photos = images
         collectionView.reloadData()
+        let item = IndexPath(item: images.count - 1, section: 0)
+        collectionView.scrollToItem(at: item, at: .bottom, animated: true)
     }
 }

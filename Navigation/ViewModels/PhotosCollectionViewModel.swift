@@ -16,9 +16,10 @@ struct PhotosCollectionViewModel {
     let sectionInset: UIEdgeInsets
     let scrollDirection: UICollectionView.ScrollDirection
     let layout = UICollectionViewFlowLayout()
+    let itemWidth: CGFloat
     
    
-    init(collectionViewItemCount: CGFloat, minimumInteritemSpacing: CGFloat, minimumLineSpacing: CGFloat, sectionInset: UIEdgeInsets, scrollDirection: UICollectionView.ScrollDirection) {
+    init(collectionViewItemCount: CGFloat, minimumInteritemSpacing: CGFloat, minimumLineSpacing: CGFloat, sectionInset: UIEdgeInsets, scrollDirection: UICollectionView.ScrollDirection, itemWidth: CGFloat) {
         self.collectionViewItemCount = collectionViewItemCount
         self.minimumInteritemSpacing = minimumInteritemSpacing
         self.minimumLineSpacing = minimumLineSpacing
@@ -28,5 +29,6 @@ struct PhotosCollectionViewModel {
         self.layout.minimumInteritemSpacing = minimumInteritemSpacing
         self.layout.minimumLineSpacing = minimumInteritemSpacing
         self.layout.sectionInset = sectionInset
+        self.itemWidth = itemWidth
     }
 }

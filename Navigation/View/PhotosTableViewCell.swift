@@ -9,7 +9,7 @@ import UIKit
 
 class PhotosTableViewCell: UITableViewCell {
     
-    private lazy var collectionView = CollectionViewFactory().createProfileViewControllerCollectionView()
+    private lazy var collectionView = PhotoCollectionView(viewControllerName: .profileVC)
     
     private lazy var photosLabel: UILabel = {
         let label = UILabel()
@@ -56,7 +56,7 @@ class PhotosTableViewCell: UITableViewCell {
             make.leading.equalTo(self.contentView.snp.leading)
             make.trailing.equalTo(self.contentView.snp.trailing)
             make.bottom.equalTo(self.contentView.snp.bottom)
-            make.height.equalTo(collectionView.itemHeight ?? 0)
+            make.height.equalTo(collectionView.itemWidth + collectionView.layout.sectionInset.top + collectionView.layout.sectionInset.bottom + collectionView.layout.minimumLineSpacing)
             make.width.equalTo(UIScreen.main.bounds.width)
         }
     }

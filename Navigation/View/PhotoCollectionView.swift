@@ -9,38 +9,67 @@ import UIKit
 import StorageService
 
 class PhotoCollectionView: UICollectionView {
-
     
-    lazy var photos: [UIImage] = Photos().photosName
-    var itemHeight: CGFloat?
-    private var layout: UICollectionViewFlowLayout
-    private var collectionViewItemCount: CGFloat
-    
-    init(viewStruct: PhotosCollectionViewModel) {
-        self.layout = viewStruct.layout
-        self.collectionViewItemCount = viewStruct.collectionViewItemCount
-        super.init(frame: .zero, collectionViewLayout: layout)
-        setupView()
-        setCollectionItemHieght(layout: layout)
+    enum ViewControllerName {
+        case profileVC
+        case photosVC
     }
+    
+    init(viewControllerName: ViewControllerName) {
+        super.init(frame: .zero, collectionViewLayout: layout)
+        self.layout = setLayout(viewControllerName)
+        self.itemWidth = setItemWidth(viewControllerName)
+        setupView()
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setLayout(_ viewControllerName: ViewControllerName) -> UICollectionViewFlowLayout {
+       
+        switch viewControllerName {
+        case .profileVC:
+           layout.scrollDirection = .horizontal
+            layout.minimumInteritemSpacing = 8
+            layout.sectionInset = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+            return layout
+        case .photosVC:
+            layout.scrollDirection = .vertical
+            layout.minimumInteritemSpacing = 8
+            layout.minimumLineSpacing = 8
+            layout.sectionInset = UIEdgeInsets(top: 8, left: 12, bottom: 8, right: 12)
+            return layout
+        }
+    }
+    
+    func setItemWidth(_ viewControllerName: ViewControllerName) -> CGFloat{
+        
+        var collectionViewItemCount: CGFloat = 0
+        
+        switch viewControllerName {
+        case .profileVC:
+            collectionViewItemCount = 4
+        case .photosVC:
+            collectionViewItemCount = 3
+        }
+        let width = UIScreen.main.bounds.width - (collectionViewItemCount - 1) * layout.minimumInteritemSpacing - layout.sectionInset.left - layout.sectionInset.right
+        let itemWidth = width / collectionViewItemCount
+        return itemWidth
+    }
+    
+
+    lazy var photos: [UIImage] = Photos().photosName
+    var layout = UICollectionViewFlowLayout()
+    var itemWidth: CGFloat = 0
+    
     func setupView() {
+    
         self.register(PhotosCollectionViewCell.self, forCellWithReuseIdentifier: "PhotosCollectionViewCell")
         self.backgroundColor = .white
         self.delegate = self
         self.dataSource = self
         self.translatesAutoresizingMaskIntoConstraints = false
-    }
-    
-    func setCollectionItemHieght(layout: UICollectionViewFlowLayout) {
-        let inset = layout.sectionInset
-        let interitemSpacing = layout.minimumLineSpacing
-        let height = UIScreen.main.bounds.width - (collectionViewItemCount - 1) * interitemSpacing - inset.left - inset.right
-        let itemHeight = height / collectionViewItemCount
-        self.itemHeight = itemHeight
     }
 }
 
@@ -60,7 +89,7 @@ extension PhotoCollectionView: UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = itemHeight ?? 0
+        let size = itemWidth
         return CGSize(width: size, height: size)
     }
 }

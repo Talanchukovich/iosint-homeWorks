@@ -96,7 +96,6 @@ class LoginView: UIView {
         loginViews.forEach({self.addSubview($0)})
         
         logoImageView.snp.makeConstraints { make in
-            make.top.equalTo(self.snp.top).inset(120)
             make.centerX.equalTo(self.snp.centerX)
             make.width.equalTo(100)
             make.height.equalTo(100)
